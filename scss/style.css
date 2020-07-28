@@ -9,10 +9,6 @@
   font-family: 'Abril Fatface', cursive;
 }
 
-header nav {
-  height: 60px;
-}
-
 button[type=submit].simple-btn {
   font-size: 14px;
 }
@@ -37,12 +33,52 @@ section#hero div.hero-txt {
   padding: 70px;
 }
 
+@media screen and (max-width: 1250px) {
+  section#hero {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
+  section#hero div.hero-img {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  section#hero {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  div.hero-img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: 1/2;
+    z-index: -2;
+  }
+  div.hero-txt {
+    border: solid 2px black;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: 1/2;
+  }
+}
+
 section#cards {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 500px;
       grid-template-rows: 1fr 500px;
   place-items: center;
+}
+
+@media screen and (max-width: 1026px) {
+  section#cards {
+    -ms-grid-rows: 1fr auto;
+        grid-template-rows: 1fr auto;
+  }
 }
 
 section#data {
